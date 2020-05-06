@@ -1,4 +1,5 @@
 # PortfolioMaker
+<img src=" ">
 
 Web application in Angular 9 for exposing a personal work portfolio.
 
