@@ -13,6 +13,10 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-chart.component';
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -21,6 +25,13 @@ import { PieChartComponent } from './components/pie-chart/pie-chart.component';
     ButtonsModule,
     TableModule,
     ChartsRoutingModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
     StoreModule.forFeature('charts', fromCharts.chartsReducer),
     EffectsModule.forFeature([ChartsEffects])
   ],
@@ -28,3 +39,8 @@ import { PieChartComponent } from './components/pie-chart/pie-chart.component';
   exports: [ChartsComponent, LineChartComponent]
 })
 export class ChartsDataModule { }
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

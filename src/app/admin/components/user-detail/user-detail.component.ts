@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy
 import { User } from '../../../auth/models/user.model';
 import { Project } from '../../../projects/models/project.model';
 import { Customer } from '../../../customers/models/customer.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-user-detail',
@@ -23,7 +24,14 @@ export class UserDetailComponent implements OnInit {
   @Output() addAdmin = new EventEmitter<any>();
   @Output() removeAdmin = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(public translate: TranslateService) {
+    translate.addLangs(['en', 'es']);
+    translate.setDefaultLang('es');
+  }
+
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 
   ngOnInit() {
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { User } from '../../../auth/models/user.model';
 import { FormGroup, FormControl } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-profile',
@@ -14,7 +15,14 @@ export class MainProfileComponent implements OnInit {
 
   updateProfileForm: FormGroup;
 
-  constructor() { }
+  constructor(public translate: TranslateService) {
+      translate.addLangs(['en', 'es']);
+      translate.setDefaultLang('es');
+  }
+
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 
   ngOnInit() {
     this.updateProfileForm = new FormGroup({

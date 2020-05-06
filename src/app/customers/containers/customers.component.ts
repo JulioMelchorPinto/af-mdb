@@ -12,6 +12,9 @@ import { ConfirmModalComponent } from '../../shared/components/confirm-modal/con
 import { CustomersModalComponent } from '../../shared/components/customers-modal/customers-modal.component';
 import { AngularFireAuth } from '@angular/fire/auth';
 
+import { TranslateService } from '@ngx-translate/core';
+
+
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
@@ -30,7 +33,18 @@ export class CustomersComponent implements OnInit, OnDestroy {
 
   lastCustomerIndex: number;
 
-  constructor(private modalService: MDBModalService, private store: Store<AppState>, private afAuth: AngularFireAuth) { }
+  constructor(
+    private modalService: MDBModalService, 
+    private store: Store<AppState>, 
+    private afAuth: AngularFireAuth,
+    public translate: TranslateService) {
+      translate.addLangs(['en', 'es']);
+      translate.setDefaultLang('es');
+  }
+
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 
   ngOnInit() {
     this.isLoading$ = this.store.select(getIsLoading);

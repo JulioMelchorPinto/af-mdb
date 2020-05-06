@@ -1,27 +1,27 @@
 <mdb-card>
   <mdb-card-body>
     <h3 class="h2-responsive mb-4">
-      <strong>Editar perfil</strong>
+      <strong>{{'EditProfile'| translate}}</strong>
     </h3>
 
     <!--Body-->
     <form [formGroup]="updateProfileForm">
-      <h5 class="h5-responsive">Nombre a mostrar</h5>
+      <h5 class="h5-responsive">{{'DisplayedName'| translate}}</h5>
       <div class="md-form">
         <i class="fa fa-user prefix"></i>
         <input type="text" id="form1" class="form-control" mdbInput formControlName="displayName" />
-        <label for="form1">Nombre a mostrar</label>
+        <label for="form1">{{'DisplayedName'| translate}}</label>
       </div>
 
-      <h5 class="h5-responsive">Enlase URL de foto</h5>
+      <h5 class="h5-responsive">{{'PhotoUrl'| translate}}</h5>
       <div class="md-form">
         <i class="fa fa-user prefix"></i>
         <input type="text" id="form2" class="form-control" mdbInput formControlName="photoUrl" />
-        <label for="form2">Enlase URL de foto</label>
+        <label for="form2">{{'PhotoUrl'| translate}}</label>
       </div>
 
       <div class="text-right">
-        <button type="button" mdbBtn color="primary" (click)="onProfileUpdate()">Actualizar perfil</button>
+        <button type="button" mdbBtn color="primary" (click)="onProfileUpdate()">{{'UpdateProfile'| translate}}</button>
       </div>
     </form>
   </mdb-card-body>

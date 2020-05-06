@@ -17,6 +17,10 @@ import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -25,7 +29,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RouterModule,
     DropdownModule.forRoot(),
     CardsModule,
-    ButtonsModule
+    ButtonsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
   ],
   declarations: [
     HeaderComponent,
@@ -45,3 +56,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ]
 })
 export class CoreModule {}
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

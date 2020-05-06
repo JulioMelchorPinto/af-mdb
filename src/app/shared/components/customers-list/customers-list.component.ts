@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Customer } from '../../../customers/models/customer.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-customers-list',
@@ -11,7 +12,13 @@ export class CustomersListComponent implements OnInit {
   @Output() customerDeleted = new EventEmitter<Customer>();
   @Output() customerEdited = new EventEmitter<Customer>();
 
-  constructor() { }
+  constructor(public translate: TranslateService) {
+      translate.addLangs(['en', 'es']);
+      translate.setDefaultLang('es');
+  }
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 
   ngOnInit() {
   }

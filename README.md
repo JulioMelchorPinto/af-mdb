@@ -1,7 +1,7 @@
 # portfolioMaker
 Web application in Angular 9 for exposing a personal work portfolio.
 
-<img src="src/assets/screenshots/screenshot01.jpg">
+<img src="src/assets/screenshots/screenshot01.png">
 
 This project was made using MDB Boilerplate as starting template.
 

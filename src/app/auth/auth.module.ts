@@ -11,6 +11,10 @@ import { InputsModule, ButtonsModule, CardsModule, IconsModule, WavesModule, Inp
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -23,6 +27,13 @@ import { RouterModule } from '@angular/router';
     WavesModule,
     RouterModule,
     IconsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
     StoreModule.forFeature('auth', fromAuth.authReducer),
     EffectsModule.forFeature([AuthEffects])
   ],
@@ -31,3 +42,8 @@ import { RouterModule } from '@angular/router';
   providers: [AuthService]
 })
 export class AuthModule { }
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

@@ -24,6 +24,8 @@
     "@ngrx/effects": "^8.5.2",
     "@ngrx/store": "^8.5.2",
     "@ngrx/store-devtools": "^8.5.2",
+    "@ngx-translate/core": "^12.1.2",
+    "@ngx-translate/http-loader": "^4.0.0",
     "@types/chart.js": "^2.7.40",
     "@types/md5": "^2.1.33",
     "angular-bootstrap-md": "^8.8.0",

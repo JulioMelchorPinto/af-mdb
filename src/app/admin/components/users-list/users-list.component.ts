@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-users-list',
@@ -12,7 +13,14 @@ export class UsersListComponent implements OnInit {
   @Output() addAdmin = new EventEmitter<any>();
   @Output() removeAdmin = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(public translate: TranslateService) {
+    translate.addLangs(['en', 'es']);
+    translate.setDefaultLang('es');
+  }
+
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 
   ngOnInit() {
   }

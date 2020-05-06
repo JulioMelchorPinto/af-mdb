@@ -12,6 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -25,6 +29,13 @@ import { SharedModule } from '../shared/shared.module';
     WavesModule,
     IconsModule,
     CardsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
     StoreModule.forFeature('projects', fromProjects.projectsReducer),
     EffectsModule.forFeature([ProjectsEffects])
   ],
@@ -32,3 +43,8 @@ import { SharedModule } from '../shared/shared.module';
   exports: [ProjectsComponent],
 })
 export class ProjectsModule { }
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

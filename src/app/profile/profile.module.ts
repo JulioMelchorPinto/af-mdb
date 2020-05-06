@@ -7,6 +7,10 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { MainProfileComponent } from './components/main-profile/main-profile.component';
 import { ProfileUserComponent } from './components/profile-user/profile-user.component';
 
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,9 +19,21 @@ import { ProfileUserComponent } from './components/profile-user/profile-user.com
     ButtonsModule,
     InputsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
   ],
   declarations: [ProfileComponent, MainProfileComponent, ProfileUserComponent],
   exports: [ProfileComponent]
 })
 export class ProfileModule { }
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

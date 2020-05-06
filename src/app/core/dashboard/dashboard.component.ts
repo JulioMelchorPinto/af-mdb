@@ -8,6 +8,8 @@ import { getUser } from '../../auth/store/auth.selectors';
 import { switchMap, take } from 'rxjs/operators';
 import { Customer } from '../../customers/models/customer.model';
 
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -74,8 +76,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
   constructor(
     private store: Store<AppState>,
     private projectsService: ProjectsService,
-    private customersService: CustomersService
-  ) {}
+    private customersService: CustomersService, 
+    public translate: TranslateService) {
+    translate.addLangs(['en', 'es']);
+  }
+
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 
   ngOnInit() {
     this.initProjects();

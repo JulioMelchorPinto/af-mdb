@@ -9,25 +9,25 @@
     <form #projectForm="ngForm">
       <div class="md-form">
         <input type="text" class="form-control" name="title" [(ngModel)]="project.title" mdbInput mdbValidate [validateSuccess]="false" #title="ngModel" required>
-        <label for="title">T&iacute;tulo</label>
-        <mdb-error *ngIf="title && title.invalid && (title.dirty || title.touched)">El t&iacute;tulo es requerido</mdb-error>
+        <label for="title">{{'Title' | translate}}</label>
+        <mdb-error *ngIf="title && title.invalid && (title.dirty || title.touched)">{{'TitleReq' | translate}}</mdb-error>
       </div>
 
       <div class="md-form">
         <textarea type="text" id="description" class="md-textarea form-control" name="description" [(ngModel)]="project.description" mdbInput mdbValidate [validateSuccess]="false" #description="ngModel" required></textarea>
-        <label for="description">Descripci&oacute;n</label>
-        <mdb-error *ngIf="description && description.invalid && (description.dirty || description.touched)">Se requiere una descripci&oacute;n</mdb-error>
+        <label for="description">{{'Description' | translate}}</label>
+        <mdb-error *ngIf="description && description.invalid && (description.dirty || description.touched)">{{'DescriptionReq' | translate}}</mdb-error>
       </div>
 
       <div class="md-form">
         <input type="text" id="photo" class="form-control" name="photoUrl" [(ngModel)]="project.photoUrl" mdbInput>
-        <label for="photo">Enlase URL de foto</label>
+        <label for="photo">{{'PhotoUrl' | translate}}</label>
       </div>
     </form>
   </div>
   <div class="modal-footer">
     <button type="button" mdbBtn color="white" class="black-text waves-light" aria-label="Close" (click)="modalRef.hide()"
-      mdbWavesEffect>Cerrar</button>
-    <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)="onSave()">Guardar</button>
+      mdbWavesEffect>{{'Close' | translate}}</button>
+    <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)="onSave()">{{'Save' | translate}}</button>
   </div>
 </div>

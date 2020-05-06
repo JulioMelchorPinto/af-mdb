@@ -13,6 +13,10 @@ import { CollapseModule, CardsModule, ButtonsModule, BadgeModule, IconsModule, D
 import { SharedModule } from '../shared/shared.module';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 @NgModule({
   declarations: [AdminComponent, UsersListComponent, UserComponent, UserDetailComponent],
   imports: [
@@ -25,8 +29,20 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
     BadgeModule,
     ButtonsModule,
     IconsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
     StoreModule.forFeature('admin', fromAdmin.adminReducer),
     EffectsModule.forFeature([AdminEffects])
   ]
 })
 export class AdminModule { }
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

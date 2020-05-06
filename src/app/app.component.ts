@@ -5,6 +5,9 @@ import { Observable } from 'rxjs';
 import { User } from './auth/models/user.model';
 import { getUser, getIsLoggedIn, getIsLoading, getIsAdmin } from './auth/store/auth.selectors';
 
+import { TranslateService } from '@ngx-translate/core';
+
+
 import * as fromAuth from './auth/store/auth.actions';
 
 @Component({
@@ -20,7 +23,13 @@ export class AppComponent implements OnInit {
   isLoading$: Observable<boolean>;
   isAdmin$: Observable<boolean>;
 
-  constructor(private store: Store<AppState>) {}
+  constructor(
+    private store: Store<AppState>,
+    public translate: TranslateService
+  ) {
+    translate.addLangs(['en', 'es']);
+    translate.setDefaultLang('es');
+  }
 
   ngOnInit() {
     this.user$ = this.store.select(getUser);
@@ -33,4 +42,7 @@ export class AppComponent implements OnInit {
     this.store.dispatch(new fromAuth.LogoutRequested( { user }));
   }
 
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 }

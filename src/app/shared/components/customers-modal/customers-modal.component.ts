@@ -3,6 +3,7 @@ import { MDBModalRef } from 'angular-bootstrap-md';
 import { Customer } from '../../../customers/models/customer.model';
 import { Subject } from 'rxjs';
 import { NgForm } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-customers-modal',
@@ -17,7 +18,15 @@ export class CustomersModalComponent implements OnInit {
 
   customerData: Subject<Customer> = new Subject();
 
-  constructor(public modalRef: MDBModalRef) { }
+  constructor(
+    public modalRef: MDBModalRef,
+    public translate: TranslateService) {
+      translate.addLangs(['en', 'es']);
+      translate.setDefaultLang('es');
+  }
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 
   ngOnInit() {
   }

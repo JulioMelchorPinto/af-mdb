@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { User } from '../../../auth/models/user.model';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-profile-user',
@@ -11,7 +13,13 @@ export class ProfileUserComponent implements OnInit {
   @Input() user: User;
   @Output() logout = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(public translate: TranslateService) {
+      translate.addLangs(['en', 'es']);
+      translate.setDefaultLang('es');
+  }
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 
   ngOnInit() {
   }

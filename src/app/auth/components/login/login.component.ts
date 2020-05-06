@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 import { getError } from '../../store/auth.selectors';
 import { map } from 'rxjs/operators';
 
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +19,14 @@ export class LoginComponent implements OnInit {
 
   error$: Observable<string | null>;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>, public translate: TranslateService) {
+    translate.addLangs(['en', 'es']);
+    translate.setDefaultLang('es');
+  }
+
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 
   ngOnInit() {
     this.loginForm = new FormGroup({

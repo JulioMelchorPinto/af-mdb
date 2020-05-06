@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Project } from '../../../projects/models/project.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project',
@@ -13,7 +14,13 @@ export class ProjectComponent implements OnInit {
   @Output() deleted = new EventEmitter<Project>();
   @Output() edited = new EventEmitter<Project>();
 
-  constructor() { }
+  constructor(public translate: TranslateService) {
+      translate.addLangs(['en', 'es']);
+      translate.setDefaultLang('es');
+  }
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 
   ngOnInit() {
   }

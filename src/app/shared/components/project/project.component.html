@@ -16,8 +16,8 @@
     </mdb-card-text>
 
     <div class="text-left">
-      <a *ngIf="editable" mdbBtn color="primary" mdbWavesEffect (click)="onEdit()">Editar</a>
-      <a mdbBtn class="red lighten-1 white-text" mdbWavesEffect (click)="onDelete()">Borrar</a>
+      <a *ngIf="editable" mdbBtn color="primary" mdbWavesEffect (click)="onEdit()">{{'Edit' | translate}}</a>
+      <a mdbBtn class="red lighten-1 white-text" mdbWavesEffect (click)="onDelete()">{{'Delete' | translate}}</a>
     </div>
   </mdb-card-body>
 </mdb-card>

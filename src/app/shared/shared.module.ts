@@ -15,6 +15,10 @@ import { ProjectComponent } from './components/project/project.component';
 import { ProjectsListComponent } from './components/projects-list/projects-list.component';
 import { CustomersListComponent } from './components/customers-list/customers-list.component';
 
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 @NgModule({
   declarations: [
     ConfirmModalComponent,
@@ -31,7 +35,14 @@ import { CustomersListComponent } from './components/customers-list/customers-li
     IconsModule,
     FormsModule,
     ButtonsModule,
-    CardsModule
+    CardsModule,
+    TranslateModule.forRoot({
+       loader: {
+       provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
   ],
   exports: [ProjectsListComponent, ProjectComponent, CustomersListComponent],
   providers: [],
@@ -42,3 +53,8 @@ import { CustomersListComponent } from './components/customers-list/customers-li
   ]
 })
 export class SharedModule {}
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

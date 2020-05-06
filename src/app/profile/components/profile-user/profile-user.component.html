@@ -6,11 +6,11 @@
       </div>
 
       <h3 *ngIf="user.displayName" class="mt-4">{{ user.displayName }}</h3>
-      <h3 *ngIf="!user.displayName" class="mt-4">Usuario An&oacute;nimo</h3>
+      <h3 *ngIf="!user.displayName" class="mt-4">{{'AnonymousUser' | translate}}</h3>
 
       <a mdbBtn class="mt-3" color="primary" (click)="onLogout()">
         <i class="fa fa-sign-out"></i>
-        Cerrar Sesi&oacute;n
+        {{'Logout' | translate}}
       </a>
     </div>
   </mdb-card-body>

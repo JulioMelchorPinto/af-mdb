@@ -10,6 +10,7 @@ import { take, map } from 'rxjs/operators';
 import { ConfirmModalComponent } from '../../shared/components/confirm-modal/confirm-modal.component';
 import { ProjectModalComponent } from '../../shared/components/project-modal/project-modal.component';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
@@ -25,7 +26,17 @@ export class ProjectsComponent implements OnInit {
     class: 'modal-dialog-centered'
   };
 
-  constructor(private store: Store<AppState>, private modalService: MDBModalService, private afAuth: AngularFireAuth) { }
+  constructor(
+    private store: Store<AppState>, 
+    private modalService: MDBModalService, 
+    private afAuth: AngularFireAuth,
+    public translate: TranslateService) {
+      translate.addLangs(['en', 'es']);
+      translate.setDefaultLang('es');
+  }
+  switchLang(lang: string) {
+      this.translate.use(lang);
+  }
 
   ngOnInit() {
     this.isLoading$ = this.store.select(getAllLoaded);
