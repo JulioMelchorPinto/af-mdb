@@ -2,7 +2,7 @@
   <mdb-card-body class="py-4">
     <div class="mb-5 back-button" (click)="closeDetails()">
       <mdb-icon fas icon="arrow-left" class="mr-2"></mdb-icon>
-      <span>Back to user list</span>
+      <span>Regresar a la lista de usuarios</span>
     </div>
     <div class="d-flex flex-row justify-content-between flex-wrap">
       <div class="d-flex flex-row">
@@ -15,33 +15,32 @@
           <h4>{{ user.displayName }}</h4>
           <div>
             <span class="mr-2">
-              <mdb-badge *ngIf="!user.isOnline" color="red">Offline</mdb-badge>
-              <mdb-badge *ngIf="user.isOnline" color="green">Online</mdb-badge>
+              <mdb-badge *ngIf="!user.isOnline" color="red">Sin conexi&oacute;n</mdb-badge>
+              <mdb-badge *ngIf="user.isOnline" color="green">Conectado</mdb-badge>
             </span>
             <span>
-              <mdb-badge *ngIf="user.isAdmin" color="purple">Admin</mdb-badge>
+              <mdb-badge *ngIf="user.isAdmin" color="purple">Administrador</mdb-badge>
             </span>
           </div>
         </div>
       </div>
 
       <div class="mt-3">
-        <button *ngIf="!user.isAdmin" mdbBtn outline="true" color="red" (click)="onAddAdmin()">Add admin privileges</button>
-        <button *ngIf="user.isAdmin" mdbBtn outline="true" color="red" (click)="onRemoveAdmin()">Remove admin
-          privileges</button>
+        <button *ngIf="!user.isAdmin" mdbBtn outline="true" color="red" (click)="onAddAdmin()">Añadir privilegios de administrador</button>
+        <button *ngIf="user.isAdmin" mdbBtn outline="true" color="red" (click)="onRemoveAdmin()">Borrar privilegios de administrador</button>
       </div>
     </div>
 
     <hr class="my-5">
 
     <div class="d-flex flex-row align-items-center">
-      <h4 class="mr-3">Projects</h4>
-      <button mdbBtn color="primary" size="sm" (click)="loadProjects()">Load user projects</button>
+      <h4 class="mr-3">Proyectos</h4>
+      <button mdbBtn color="primary" size="sm" (click)="loadProjects()">Cargar proyectos de usuario</button>
     </div>
 
     <div *ngIf="userProjectsLoading" class="d-flex justify-content-center align-items-center" style="margin-top: 50px">
       <div class="spinner-grow text-primary" role="status" style="width: 4rem; height: 4rem;">
-        <span class="sr-only">Loading...</span>
+        <span class="sr-only">Procesando...</span>
       </div>
     </div>
 
@@ -50,13 +49,13 @@
     <hr class="my-5">
 
     <div class="d-flex flex-row align-items-center mb-4">
-      <h4 class="mr-3">Customers</h4>
-      <button mdbBtn color="primary" size="sm" (click)="loadCustomers()">Load user customers</button>
+      <h4 class="mr-3">Clientes</h4>
+      <button mdbBtn color="primary" size="sm" (click)="loadCustomers()">Cargar clientes de usuario</button>
     </div>
 
     <div *ngIf="userCustomersLoading" class="d-flex justify-content-center align-items-center" style="margin-top: 50px">
       <div class="spinner-grow text-primary" role="status" style="width: 4rem; height: 4rem;">
-        <span class="sr-only">Loading...</span>
+        <span class="sr-only">Procesando...</span>
       </div>
     </div>
 

@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "dist/af-mdb",
+    "site": "jmelchorp-mdb",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "dist/af-mdb/index.html"
+      }
+    ]
+  }
+}

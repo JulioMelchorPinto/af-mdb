@@ -6,7 +6,7 @@
 
         <div class="white text-center py-4">
           <h5>
-            <strong>Log in</strong>
+            <strong>Inicia sesi&oacute;n</strong>
           </h5>
         </div>
 
@@ -22,37 +22,39 @@
             <!-- Email -->
             <div class="md-form">
               <input mdbValidate [validateSuccess]="false" type="email" id="email" class="form-control" formControlName="email" mdbInput>
-              <label for="email">E-mail</label>
-              <mdb-error *ngIf="email && email.invalid && (email.dirty || email.touched)">Email is required</mdb-error>
+              <label for="email">Correo electr&oacute;nico</label>
+              <mdb-error *ngIf="email && email.invalid && (email.dirty || email.touched)">El correo electr&oacute;nico es requerido</mdb-error>
             </div>
 
             <!-- Password -->
             <div class="md-form">
               <input mdbValidate [validateSuccess]="false" type="password" id="password" class="form-control" formControlName="password" mdbInput>
-              <label for="password">Password</label>
-              <mdb-error *ngIf="password && password.invalid && (password.dirty || password.touched)">Password is required</mdb-error>
+              <label for="password">Contraseña</label>
+              <mdb-error *ngIf="password && password.invalid && (password.dirty || password.touched)">La contraseña es requerida</mdb-error>
             </div>
 
             <!-- Sign in button -->
             <button mdbBtn color="primary" block="true" class="my-4 waves-effect z-depth-0"
-              mdbWavesEffect type="submit" (click)="onLogin()">Log in</button>
-
-            <!-- Register -->
-            <p>Not a member?
-              <a routerLink="/register">Register</a>
-            </p>
-
+              mdbWavesEffect type="submit" (click)="onLogin()">Iniciar sesi&oacute;n</button>
             <!-- Social login -->
-            <p>or log in with:</p>
-            <a type="button" class="mr-4" (click)="onFacebookLogin('facebook')">
-              <mdb-icon fab icon="facebook-f"></mdb-icon>
-            </a>
-            <a type="button" class="mr-4" (click)="onTwitterLogin('twitter')">
-              <mdb-icon fab icon="twitter"></mdb-icon>
-            </a>
-            <a type="button" (click)="onGoogleLogin('google')">
-              <mdb-icon fab icon="google-plus-g"></mdb-icon>
-            </a>
+            <div class="mb-4">
+              <p>o, tambi&eacute;n puedes iniciar sesi&oacute;n con:</p>
+              <a type="button" class="mr-4" (click)="onFacebookLogin('facebook')">
+                <mdb-icon size="lg" fab icon="facebook-f"></mdb-icon>
+              </a>
+              <a type="button" class="mr-4" (click)="onTwitterLogin('twitter')">
+                <mdb-icon size="lg" fab icon="twitter"></mdb-icon>
+              </a>
+              <a type="button" (click)="onGoogleLogin('google')">
+                <mdb-icon size="lg" fab icon="google-plus-g"></mdb-icon>
+              </a>
+            </div>
+            <!-- Register -->
+            <div class="border-top">
+              <p>¿No eres miembro?
+                <a routerLink="/register">Reg&iacute;strate aqu&iacute;</a>
+              </p>
+            </div>
           </form>
           <!-- Form -->
 

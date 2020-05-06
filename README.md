@@ -5,7 +5,7 @@ Free, responsive CRUD application starter with NgRx state management, Firebase b
 ________
 
 # Live Preview:
-## https://ng-boilerplate.mdbootstrap.com/
+## https://jmelchorp-mdb.web.app/
 
 # Technologies used
 
@@ -26,7 +26,7 @@ ________
 # Installation:
 
 **Firebase configuration:**
-http://mdbootstrap.com/docs/angular/getting-started/boilerplate-installation
+
 
 **Install:**
 npm i
