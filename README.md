@@ -1,6 +1,8 @@
 # portfolioMaker
 Web application in Angular 8 for exposing a personal work portfolio.
 
+![Node.js CI](https://github.com/JulioMelchorPinto/portfolioMaker/workflows/Node.js%20CI/badge.svg?branch=master)
+
 <img src="src/assets/screenshots/screenshot01.png">
 
 This project was made using MDB Boilerplate as starting template.
