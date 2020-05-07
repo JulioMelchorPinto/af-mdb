@@ -1,10 +1,7 @@
 # portfolioMaker
 Web application in Angular 8 for exposing a personal work portfolio.
 
-<img height="100" src="src/assets/screenshots/screenshot01.png">
-<img height="100" src="src/assets/screenshots/screenshot02.png">
-<img height="100" src="src/assets/screenshots/screenshot03.png">
-<img height="100" src="src/assets/screenshots/screenshot04.png">
+<img src="src/assets/screenshots/screenshot01.png">
 
 This project was made using MDB Boilerplate as starting template.
 ________
@@ -29,3 +26,10 @@ The goal of **portfolioMaker** is to serve as an opensource platform for manage 
 * Real time updates with Firebase real time database
 * Admin panel - manage user content
 * Responsive design
+
+# Screenshots
+
+<img src="src/assets/screenshots/screenshot02.png">
+<img src="src/assets/screenshots/screenshot03.png">
+<img src="src/assets/screenshots/screenshot04.png">
+<img src="src/assets/screenshots/screenshot07.png">
