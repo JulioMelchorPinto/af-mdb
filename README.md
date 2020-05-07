@@ -8,7 +8,7 @@ ________
 
 The goal of **portfolioMaker** is to serve as an opensource platform for manage a personal work porfolio of authenticated users. You can register by provading basic information and login with social providers.
 
-This website is under construction, so feel free to contribute in line with the <a href=".github/TEMPLATES/CODE_OF_CONDUCT.MD">Code of conduct</a>
+This website is under construction, so feel free to contribute in line with the <a href="CODE_OF_CONDUCT.md">Code of conduct</a>
 
 # Live Preview:
 You can check the last stage of the app in here: https://jmelchorp-mdb.web.app/
