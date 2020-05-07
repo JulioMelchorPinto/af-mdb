@@ -1,5 +1,5 @@
 # portfolioMaker
-Web application in Angular 9 for exposing a personal work portfolio.
+Web application in Angular 8 for exposing a personal work portfolio.
 
 <img src="src/assets/screenshots/screenshot01.png">
 
@@ -12,7 +12,7 @@ ________
 
 # Technologies used
 
-* Angular 7
+* Angular 8
 * Bootstrap 4
 * MDBootstrap Angular
 * NgRx
