@@ -20,7 +20,7 @@ You can check the last stage of the app in here: https://jmelchorp-mdb.web.app/
 * MDBootstrap Angular
 * NgRx
 * Firebase 
-* i18n translation (<img height="10" src="src/assets/flags/en.svg"> <img height="10" src="src/assets/flags/es.svg">)
+* i18n ngx-translate (<img height="10" src="src/assets/flags/en.svg"> <img height="10" src="src/assets/flags/es.svg">)
 
 # Most important features
 
