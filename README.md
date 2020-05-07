@@ -1,11 +1,15 @@
 # portfolioMaker
 Web application in Angular 8 for exposing a personal work portfolio.
 
-<img src="src/assets/screenshots/screenshot01.png">
+<img height="100" src="src/assets/screenshots/screenshot01.png">
+<img height="100" src="src/assets/screenshots/screenshot02.png">
+<img height="100" src="src/assets/screenshots/screenshot03.png">
+<img height="100" src="src/assets/screenshots/screenshot04.png">
 
 This project was made using MDB Boilerplate as starting template.
-
 ________
+
+The goal of **portfolioMaker** is to serve as an opensource platform for manage a personal work porfolio of authenticated users. You can register by provading basic information and login with social providers.
 
 # Live Preview:
 ## https://jmelchorp-mdb.web.app/
