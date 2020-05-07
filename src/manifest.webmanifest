@@ -1,12 +1,18 @@
 {
   "name": "af-mdb",
   "short_name": "af-mdb",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "white",
+  "background_color": "white",
+  "lang": "es-MX",
   "display": "standalone",
   "scope": "./",
+  "description": "Aplicación para la creación de un portafolio personal de trabajo",
   "start_url": "./",
   "icons": [
+    {
+      "src": "assets/favicon.ico",
+      "sizes": "72x72 96x96 128x128"
+    },
     {
       "src": "assets/images/beaverNet-72.png",
       "sizes": "72x72",
