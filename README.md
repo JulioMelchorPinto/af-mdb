@@ -17,7 +17,7 @@ ________
 * MDBootstrap Angular
 * NgRx
 * Firebase 
-* i18n translation (<img src="src/assets/flags/en.svg"> <img src="src/assets/flags/es.svg">)
+* i18n translation (<img height="30" src="src/assets/flags/en.svg"> <img height="30" src="src/assets/flags/es.svg">)
 
 # Most important features
 
