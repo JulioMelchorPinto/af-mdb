@@ -3,7 +3,9 @@ Web application in Angular 8 for exposing a personal work portfolio.
 
 ![Node.js CI](https://github.com/JulioMelchorPinto/portfolioMaker/workflows/Node.js%20CI/badge.svg?branch=master)
 ![gh-pages](https://github.com/JulioMelchorPinto/af-mdb/workflows/gh-pages/badge.svg?branch=master)
+<a href="LICENSE">
 <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+</a>
 <a href="https://twitter.com/MelchorPinto" target="_blank">
     <img alt="Twitter: MelchorPinto" src="https://img.shields.io/twitter/follow/MelchorPinto.svg?style=social" />
 </a>
