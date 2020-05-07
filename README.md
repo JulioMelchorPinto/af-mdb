@@ -16,7 +16,8 @@ ________
 * Bootstrap 4
 * MDBootstrap Angular
 * NgRx
-* Firebase
+* Firebase 
+* i18n translation (<img src="src/assets/flags/en.svg"> <img src="src/assets/flags/es.svg">)
 
 # Most important features
 
